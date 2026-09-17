@@ -8,10 +8,14 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-primary/20">
-      <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {/* Logo placeholder, replacing with elegant text for now */}
-          <span className="font-serif text-2xl text-primary font-bold tracking-tight">AyManá</span>
+      <div className="max-w-4xl mx-auto px-4 h-20 flex items-center justify-between">
+        <div className="flex items-center gap-2 h-full py-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/logo-2.png" 
+            alt="AyManá" 
+            className="h-full w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform" 
+          />
         </div>
         
         <button

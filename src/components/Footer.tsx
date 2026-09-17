@@ -4,8 +4,9 @@ export function Footer() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8 text-center sm:text-left">
           
-          <div>
-            <h3 className="font-serif font-bold text-xl text-primary mb-4">AyManá</h3>
+          <div className="flex flex-col items-center sm:items-start">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-2.png" alt="AyManá" className="h-16 w-auto object-contain mb-4 drop-shadow-sm" />
             <p className="text-text-muted text-sm leading-relaxed">
               Confeitaria artesanal adoçando dias com o amor de Deus. Feito com o coração para o seu momento especial.
             </p>
