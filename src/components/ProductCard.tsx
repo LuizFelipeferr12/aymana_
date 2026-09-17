@@ -30,26 +30,26 @@ export function ProductCard({ product }: ProductCardProps) {
       
       <div className="p-4 flex flex-col flex-grow">
         <div className="mb-2">
-          <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+          <span className="text-xs font-bold text-primary uppercase tracking-wider">
             {product.category}
           </span>
-          <h3 className="text-lg font-bold text-text-main leading-tight mt-1">
+          <h3 className="text-lg font-bold text-text-main leading-snug mt-1 font-serif">
             {product.name}
           </h3>
         </div>
         
-        <p className="text-sm text-text-muted mb-4 line-clamp-2 flex-grow">
+        <p className="text-sm text-text-muted mb-4 line-clamp-2 flex-grow leading-relaxed">
           {product.description}
         </p>
         
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-accent">
-          <span className="font-bold text-lg text-text-main">
+        <div className="flex items-center justify-between mt-auto pt-3 border-t border-slate-100">
+          <span className="font-bold text-lg text-text-main tracking-tight">
             {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}
           </span>
           
           <button
             onClick={() => addItem(product)}
-            className="flex items-center justify-center w-10 h-10 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors active:scale-95"
+            className="flex items-center justify-center w-11 h-11 bg-sky-50 text-primary rounded-full hover:bg-primary hover:text-white transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
             aria-label={`Adicionar ${product.name} ao carrinho`}
           >
             <Plus className="w-5 h-5" />

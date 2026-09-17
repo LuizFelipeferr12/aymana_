@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #9ecbff;
-  --color-primary-hover: #82b9f9;
-  --color-accent: #e8f3ff;
-  --color-text-main: #1e293b;
-  --color-text-muted: #64748b;
+  --color-primary: #0284c7;
+  --color-primary-hover: #0369a1;
+  --color-primary-light: #e0f2fe;
+  --color-primary-pastel: #9ecbff;
+  --color-accent: #f0f7ff;
+  --color-accent-subtle: #e0f2fe;
+  --color-text-main: #0f172a;
+  --color-text-muted: #475569;
   --color-background: #ffffff;
   --color-foreground: var(--color-text-main);
   
@@ -15,7 +18,32 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1e293b;
+  --foreground: #0f172a;
+}
+
+/* Browser Surfaces theming (Impeccable craft floor) */
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-hover);
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-accent);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
 }
 
 body {
@@ -24,3 +52,4 @@ body {
   font-family: var(--font-sans), sans-serif;
   @apply antialiased bg-slate-50;
 }
+

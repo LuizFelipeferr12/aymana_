@@ -6,7 +6,7 @@ export function Footer() {
           
           <div className="flex flex-col items-center sm:items-start">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-2.png" alt="AyManá" className="h-16 w-auto object-contain mb-4 drop-shadow-sm" />
+            <img src="/logo-2.png" alt="AyManá Confeitaria Artesanal" className="h-14 sm:h-16 w-auto object-contain mb-4 drop-shadow-xs" />
             <p className="text-text-muted text-sm leading-relaxed">
               Confeitaria artesanal adoçando dias com o amor de Deus. Feito com o coração para o seu momento especial.
             </p>

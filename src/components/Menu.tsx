@@ -23,16 +23,16 @@ export function Menu() {
 
         {/* Categories Carousel */}
         <div className="relative mb-10 -mx-4 px-4 sm:mx-0 sm:px-0">
-          <div className="flex overflow-x-auto hide-scrollbar gap-3 pb-4 snap-x">
+          <div className="flex overflow-x-auto hide-scrollbar gap-2.5 pb-2 snap-x">
             {CATEGORIES.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={cn(
-                  "snap-start whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95",
+                  "snap-start whitespace-nowrap px-5 py-2.5 min-h-[44px] rounded-full text-sm font-semibold transition-all active:scale-95 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary/40",
                   activeCategory === category 
-                    ? "bg-primary text-white shadow-md shadow-primary/30" 
-                    : "bg-white text-text-muted border border-accent hover:border-primary/50"
+                    ? "bg-primary text-white shadow-md shadow-sky-600/20" 
+                    : "bg-white text-slate-700 border border-slate-200 hover:border-primary/40 hover:text-slate-900 hover:bg-slate-50"
                 )}
               >
                 {category}

@@ -1,6 +1,6 @@
 "use client";
 
-import { X, Minus, Plus, ShoppingBag } from "lucide-react";
+import { X, Minus, Plus, ShoppingBag, MessageCircle } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -80,20 +80,22 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                       <p className="text-primary font-bold text-sm">{formatPrice(item.product.price)}</p>
                     </div>
 
-                    <div className="flex items-center gap-3 bg-accent/50 rounded-full px-2 py-1">
+                    <div className="flex items-center gap-2 bg-slate-100/80 rounded-full px-2 py-1">
                       <button 
                         onClick={() => {
                           if (item.quantity > 1) updateQuantity(item.product.id, item.quantity - 1);
                           else removeItem(item.product.id);
                         }}
-                        className="p-1 text-text-muted hover:text-text-main"
+                        className="w-9 h-9 min-w-[36px] min-h-[36px] rounded-full flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-white transition-all active:scale-90"
+                        aria-label="Diminuir quantidade"
                       >
                         <Minus className="w-4 h-4" />
                       </button>
-                      <span className="text-sm font-semibold w-4 text-center">{item.quantity}</span>
+                      <span className="text-sm font-semibold w-6 text-center tabular-nums text-text-main">{item.quantity}</span>
                       <button 
                         onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                        className="p-1 text-text-muted hover:text-text-main"
+                        className="w-9 h-9 min-w-[36px] min-h-[36px] rounded-full flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-white transition-all active:scale-90"
+                        aria-label="Aumentar quantidade"
                       >
                         <Plus className="w-4 h-4" />
                       </button>
@@ -104,16 +106,17 @@ export function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
             </div>
 
             {items.length > 0 && (
-              <div className="p-6 bg-slate-50 border-t border-accent">
+              <div className="p-6 bg-slate-50 border-t border-slate-200/80">
                 <div className="flex justify-between mb-4 text-text-main font-semibold text-lg">
-                  <span>Total ({totalItems} itens)</span>
-                  <span>{formatPrice(totalPrice)}</span>
+                  <span>Total ({totalItems} {totalItems === 1 ? 'item' : 'itens'})</span>
+                  <span className="tabular-nums font-bold">{formatPrice(totalPrice)}</span>
                 </div>
                 <button
                   onClick={handleCheckout}
-                  className="w-full py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/20 hover:bg-primary-hover active:scale-95 transition-all"
+                  className="w-full py-4 min-h-[52px] bg-primary text-white rounded-full font-bold shadow-lg shadow-sky-600/20 hover:bg-primary-hover active:scale-95 transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary/40"
                 >
-                  Finalizar no WhatsApp
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Finalizar no WhatsApp</span>
                 </button>
               </div>
             )}
